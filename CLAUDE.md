@@ -17,8 +17,10 @@ no framework, no dependencies. Keep it that way unless a feature truly requires 
 - Serve over http(s) for radio to stream reliably (python3 -m http.server 8000).
 
 ## Deploy
-Static host, output = repo root, no build command (Cloudflare Pages / Netlify).
-Every push auto-redeploys.
+Cloudflare Workers, static assets only (no Worker script), connected to GitHub via
+Workers Builds. `wrangler.jsonc` serves the repo root; `.assetsignore` keeps repo-only
+files (CLAUDE.md, README.md, config) out of the published site. No build command.
+Every push to `main` auto-redeploys; other branches get preview URLs.
 
 ## Working style
 Explain tradeoffs and offer alternatives rather than one forced answer; back claims

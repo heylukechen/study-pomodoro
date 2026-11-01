@@ -1,0 +1,9 @@
+# Repo-only files that shouldn't be published (assets directory is the repo root)
+.git
+.gitignore
+.assetsignore
+.wrangler
+wrangler.jsonc
+CLAUDE.md
+README.md
+**/.DS_Store

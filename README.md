@@ -15,8 +15,9 @@ serve it over http rather than file:// :
 
 ## Deploy
 Static host, output directory = project root (no build command).
-- Cloudflare Pages: connect this repo, framework preset "None", build command empty,
-  output directory `/`.
+- Cloudflare Workers (current setup): Workers & Pages → Create application → GitHub →
+  pick this repo, Worker name `study-pomodoro` (must match `name` in `wrangler.jsonc`).
+  `.assetsignore` lists the repo files that aren't published.
 - Netlify: connect this repo, build command empty, publish directory `.`.
 
 ## Edit
