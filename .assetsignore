@@ -3,6 +3,7 @@
 .gitignore
 .assetsignore
 .wrangler
+.claude
 wrangler.jsonc
 CLAUDE.md
 README.md

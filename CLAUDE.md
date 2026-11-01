@@ -7,14 +7,16 @@ no framework, no dependencies. Keep it that way unless a feature truly requires 
 - One `<style>` block with CSS custom properties; supports light/dark via tokens.
 - Timer logic (focus / short break / long break; long break every 4th round).
 - End-of-timer alarm: repeating Web Audio tone + full-screen visual alert + tab-title flash.
-- Focus soundscapes: generated in-browser (brown/rain/ocean/drone) + an embedded
-  lofi loop (data: URI) + internet radio via <audio> (SomaFM / Radio Paradise / Nightride).
+- Focus radio: internet radio via <audio> (SomaFM / Radio Paradise / Nightride), Off/On
+  toggle + station picker + volume; each station has a fallback stream URL.
 - State persists per-browser in localStorage (wrapped in try/catch).
 
 ## Conventions
 - Vanilla JS, no libraries. Keep it a single self-contained file.
-- Audio only plays during focus; it pauses on breaks and during the alarm.
+- Radio only plays during focus; it stops on breaks and during the alarm.
 - Serve over http(s) for radio to stream reliably (python3 -m http.server 8000).
+- SomaFM returns 403 when the Referer is `localhost`, so its stations only play on the
+  deployed site; test radio locally with Radio Paradise or Nightride.
 
 ## Deploy
 Cloudflare Workers, static assets only (no Worker script), connected to GitHub via
